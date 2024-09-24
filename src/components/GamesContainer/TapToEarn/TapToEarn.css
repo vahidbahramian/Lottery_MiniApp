@@ -1,0 +1,13 @@
+.button-rapid-touch {
+  touch-action: manipulation; /* Prevent default touch behavior like double-tap zoom */
+}
+@keyframes floatUp {
+  0% {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -450%);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: black;
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../src/assets/fonts/Poppins/Poppins-Light.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 800;
+  src: url('../src/assets/fonts/Poppins/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-weight: 700;
+  src: url('../src/assets/fonts/Poppins/Poppins-SemiBold.ttf') format('truetype');
+}
+
+.font-poppins {
+  font-family: 'Poppins';
+}
+
+@mixin multiLineEllipsis($lines-to-show: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines-to-show;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin scrollable($gap-x: 12px) {
+  display: flex;
+  overflow-x: auto;
+  column-gap: $gap-x;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+
+  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .clip-path-circle {
+    clip-path: circle();
+  }
+
+  .bottom-unset {
+    bottom: unset;
+  }
+}

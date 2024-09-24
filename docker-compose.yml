@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - '3000:3000'
+    working_dir: /app
+    command: ['serve', '-s', 'dist']
+    environment:
+      - NODE_OPTIONS=--max_old_space_size=4096
